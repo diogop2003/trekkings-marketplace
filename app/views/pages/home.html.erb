@@ -1,17 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/02/bd/b3/02bdb39ef8c1b90fb55b0a1ed4ee891f.jpg);">
-  <div class="container">
-    <h1>Trekkings Market</h1>
-    <p>Best place to buy and sell your <strong> trekking</strong> itens.</p>
-  </div>
-  <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/564x/18/56/b7/1856b74d59096610b9ae9a03d5961cfc.jpg)">
-      Backpacks
-    </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/564x/99/62/07/9962076753573b7149c86d609240c066.jpg)">
-      Shoes
-    </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/564x/df/d2/b4/dfd2b454608a3eece79f2d51178bd27d.jpg)">
-      Sleeping Bags
+<%= render 'shared/banner' %>
+
+
+<% @trekkings.each do |t| %>
+  <div class="d-inline-flex justify-content-around">
+    <div class="card" style="width: 18rem;">
+      <img src=<%= t.url_image %> class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"><%= t.name %></h5>
+        <p class="card-text"><%= t.price %></p>
+        <a href="#" class="btn btn-outline-success">Show the product</a>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
+>>>>>>> d0e8a955b645d5b54417e7ee9e6e39e3b69140ca
