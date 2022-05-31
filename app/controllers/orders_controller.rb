@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  def index
-    @orders = Order.all
-  end
+  # def index
+  #   @orders = policy_scope(Order)
+  # end
 
   def new
     @order = Order.new
@@ -11,6 +11,12 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
+  end
+
+  def my
+    @orders = policy_scope(Order)
+  #  @order = Order.where(user: current_user)
+  #  authorize @order
   end
 
   private
