@@ -1,0 +1,44 @@
+<form id="form-produto">
+  <div class="form-row p-3">
+        <div class="form-group col-md-12">
+            <label>Foto do produto</label><br>
+            <input id="fotoProduto" type="file" accept="image/*" capture>
+        </div>
+    </div>
+    <div class="form-row p-3">
+        <div class="form-group col-md-12">
+            <label for="cadastroProduto">Nome do produto</label>
+            <input type="text" class="form-control" id="nomeProduto">
+        </div>
+    </div>
+    <div class="form-row p-3">
+        <div class="form-group col-md-12">
+            <label for="cadastroProduto">Category</label>
+            <select type="text" class="form-control" id="category">
+                <option value=:id>shoes</option>
+                <option value=:id selected>accessories</option>
+                <option value=:id>clothes</option>
+                <option value=:id>backpacks</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row p-3">
+        <div class=" form-group col-md-6">
+            <label>Valor de venda</label>
+            <input type="number" class="form-control" id="valorVenda" placeholder="R$">
+        </div>
+    </div>
+
+    </div>
+    <div class="form-row p-3">
+        <div class="form-group col-md-12">
+            <label>Descrição</label><br>
+            <textarea id="descricaoProduto" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="form-row p-3">
+        <div class="form-group col-md-12">
+            <%= link_to "create", root_path, class: 'btn btn-outline-success' %>
+        </div>
+    </div>
+</form>

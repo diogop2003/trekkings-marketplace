@@ -9,7 +9,11 @@ class TrekkingsController < ApplicationController
 
   def create
     @trekking = Trekking.new(trekking_params)
-    @trekking.save
+    if @trekking.save
+      redirect_to @trekking, notice: "trakking was created"
+    else
+      render :new
+    end
   end
 
   private
