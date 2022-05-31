@@ -4,7 +4,7 @@
 <% @trekkings.each do |t| %>
   <div class="d-inline-flex justify-content-around">
     <div class="card" style="width: 18rem;">
-      <img src=<%= t.url_image %> class="card-img-top">
+      <img src=<%= t.url_image %> class="card-img-top rounded-start">
       <div class="card-body">
         <h5 class="card-title"><%= t.name %></h5>
         <p class="card-text"><%= t.price %></p>
