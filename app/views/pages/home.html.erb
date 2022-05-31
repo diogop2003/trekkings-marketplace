@@ -2,7 +2,14 @@
 
 
 <% @trekkings.each do |t| %>
-  <%= t.name  %>
-  <%= t.price %>
-  <br>
+  <div class="d-inline-flex justify-content-around">
+    <div class="card" style="width: 18rem;">
+      <img src=<%= t.url_image %> class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"><%= t.name %></h5>
+        <p class="card-text"><%= t.price %></p>
+        <a href="#" class="btn btn-outline-success">Show the product</a>
+      </div>
+    </div>
+  </div>
 <% end %>
