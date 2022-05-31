@@ -6,10 +6,12 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @trekking = Trekking.find(params[:trekking_id])
+    authorize @order
   end
 
   def create
     @order = Order.new(order_params)
+    authorize @order
     @order.save
   end
 
