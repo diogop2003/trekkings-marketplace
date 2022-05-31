@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @trekking = Trekking.find(params[:trekking_id])
   end
 
   def create
