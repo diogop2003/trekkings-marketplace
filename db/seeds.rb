@@ -25,5 +25,7 @@ u = Trekking.create(name: 'Coat', price: 30.90, category: 'Coat', user: g, url_i
 puts 'Creating Order...'
 
 Order.create(address: 'Rua A', user: d, trekking: u)
+Order.create(address: 'Rua B', user: h, trekking: y)
+Order.create(address: 'Rua C', user: g, trekking: t)
 
 puts 'Finish...'
