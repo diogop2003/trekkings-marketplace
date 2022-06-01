@@ -3,11 +3,11 @@
 
 <% @trekkings.each do |t| %>
   <div class="d-inline-flex justify-content-around">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img src=<%= t.url_image %> class="card-img-top rounded-start">
       <div class="card-body">
         <h5 class="card-title"><%= t.name %></h5>
-        <p class="card-text"><%= t.price %></p>
+        <p class="card-text">R$<%= t.price %></p>
         <%= link_to "Show me more", new_trekking_order_path(t.id), class: 'btn btn-outline-success' %>
       </div>
     </div>
