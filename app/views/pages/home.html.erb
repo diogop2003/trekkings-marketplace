@@ -7,7 +7,7 @@
       <img src=<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %> class="card-img-top rounded-start">
       <div class="card-body">
         <h5 class="card-title"><%= t.name %></h5>
-        <p class="card-text"><%= t.price %></p>
+        <p class="card-text">R$<%= t.price %></p>
         <%= link_to "Show me more", new_trekking_order_path(t.id), class: 'btn btn-outline-success' %>
       </div>
     </div>
