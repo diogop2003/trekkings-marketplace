@@ -1,29 +1,27 @@
 <div class="container">
-  <div class="card mb-3" style="max-width: 900px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src=<%= @trekking.url_image %> class="img-fluid rounded-start">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h2 class="card-title"><%= @trekking.name %></h2>
-          <h3 class="card-text">R$<%= @trekking.price %></h3>
+
+  <form id="form-product">
+    <div class="card mb-3" style="max-width: 900px;" id="produto">
+      <div class="row g-0">
+        <div class="col-md-4" id="img_product">
+          <img src=<%= @trekking.url_image %> class="img-fluid rounded-start">
+        </div>
+        <div class="col-md-8" id="card_product">
+          <div class="card-body">
+            <h2 class="card-title"><%= @trekking.name %></h2>
+            <h3 class="card-text">R$<%= @trekking.price %></h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <form id="form-produto">
     <div class="form-row p-3">
       <div class="form-group col-md-12">
         <label>Address</label><br>
         <input type="text" class="form-control" id="addressProduto">
       </div>
-  </div>
+    </div>
+    <%= link_to "Buy it", root_path, class: 'btn btn-outline-success' %>
   </form>
 
-  <%= link_to "Buy it", root_path, class: 'btn btn-outline-success' %>
+
 </div>
-
-
-
