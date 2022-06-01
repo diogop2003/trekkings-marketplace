@@ -1,5 +1,5 @@
 .footer {
-  background: rgb(253, 253, 253);
+  background: #fdfdfd;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,6 +7,10 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   margin-top: 50px;
+  position: fixed;
+  height: XXX;
+  bottom: 0;
+  width: 100%;
 }
 .footer-links {
   display: flex;
