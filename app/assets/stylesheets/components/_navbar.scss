@@ -12,10 +12,18 @@
   width: 50px;
 }
 
-.navbar {
+// .navbar {
+//   background-color: #ffffff; /* Black background color */
+//   position: fixed; /* Make it stick/fixed */
+//   top: 0; /* Hide the navbar 50 px outside of the top view */
+//   width: 100%; /* Full width */
+//   transition: top 0.3s; /* Transition effect when sliding down (and up) */
+// }
+
+#navbar {
   background-color: #ffffff; /* Black background color */
   position: fixed; /* Make it stick/fixed */
-  top: -100px; /* Hide the navbar 50 px outside of the top view */
+  top: 0; /* Stay on top */
   width: 100%; /* Full width */
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
