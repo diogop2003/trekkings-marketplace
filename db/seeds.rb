@@ -7,25 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 User.destroy_all
-Trekking.destroy_all
-Order.destroy_all
 
 puts 'Creating User...'
 d = User.create(name: 'Diogo', email: 'dg@gmail.com', password: '123123')
 h = User.create(name: 'Heitor', email: 'ht@gmail.com', password: '123123')
 g = User.create(name: 'Gobatto', email: 'rg@gmail.com', password: '123123')
 s = User.create(name: 'Sorriso', email: 'sr@gmail.com', password: '123123')
-
-puts 'Creating Trekking...'
-
-t = Trekking.create(name: 'Big Backpack', price: 25.50, category: 'Backpack', description: "The best Backpack in the world", user: d, url_image: 'https://ae01.alicdn.com/kf/H5b07cc8ac63d456b86eb0e35182993486/Mochila-de-60l-para-trilha-bolsa-prova-d-gua-para-acampamento-viagem-ao-ar-livre-mochila.jpg_Q90.jpg_.webp')
-y = Trekking.create(name: 'Great Shoes', price: 40.90, category: 'Shoes', description: "The best Shoes in the world", user: h, url_image: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQG5Kgu-z32r41Kd6W5TvO5t8QNDHw92tMwo-wjaEHE4aj9Hvtw54h9pxZbkRBzEDwOIJiyXD-Lvuksl0fenKBBV707wdZn7zuMmSdpx2TYcUhCoe8JHVlidw&usqp=CAE')
-u = Trekking.create(name: 'Warm Coat', price: 30.90, category: 'Coat', description: "The best Coat in the world", user: g, url_image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSpq-XG7uDD-qAGBCFMzmO20pH3gjnEPLX5TRpAmf3B7Bw96H7Jud_luzpazf1wXZZ9r-vlf1pZOzELpxz6bPfQpW9-DBxjvz7xHoMNrUtrS_5J1fhOxshcBg&usqp=CAE')
-
-puts 'Creating Order...'
-
-Order.create(address: 'Rua A', user: d, trekking: u)
-Order.create(address: 'Rua B', user: h, trekking: y)
-Order.create(address: 'Rua C', user: g, trekking: t)
 
 puts 'Finish...'

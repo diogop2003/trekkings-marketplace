@@ -11,9 +11,10 @@ class TrekkingsController < ApplicationController
 
   def create
     @trekking = Trekking.new(trekking_params)
+    @trekking.user = current_user
     authorize @trekking
     if @trekking.save
-      redirect_to @trekking, notice: "trakking was created"
+      redirect_to root_path, notice: "trakking was created"
     else
       render :new
     end
@@ -22,6 +23,6 @@ class TrekkingsController < ApplicationController
   private
 
   def trekking_params
-    params.require(:trekking).permit(:name, :price, :category, :url_image)
+    params.require(:trekking).permit(:name, :price, :category, :description, :photo)
   end
 end

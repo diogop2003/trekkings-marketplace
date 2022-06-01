@@ -1,4 +1,4 @@
 class Trekking < ApplicationRecord
   belongs_to :user
-  has_one_attached :url_image
+  has_one_attached :photo
 end

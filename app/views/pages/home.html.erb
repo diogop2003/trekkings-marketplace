@@ -3,8 +3,8 @@
 
 <% @trekkings.each do |t| %>
   <div class="d-inline-flex justify-content-around">
-    <div class="card" style="width: 18rem;">
-      <img src=<%= cl_image_tag @trekking.url_image.key, height: 300, width: 400, crop: :fill %> class="card-img-top rounded-start">
+    <div class="card">
+      <div class="trekking-card-image" style="background-image: url(<%= t.photo.attached? ? cl_image_path(t.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
       <div class="card-body">
         <h5 class="card-title"><%= t.name %></h5>
         <p class="card-text">R$<%= t.price %></p>
