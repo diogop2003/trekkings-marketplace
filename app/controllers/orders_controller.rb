@@ -12,13 +12,18 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     authorize @order
-    @order.save
+    @trekking = Trekking.find(params[:trekking_id])
+    @order.trekking = @trekking
+    @order.user = current_user
+    if @order.save
+      redirect_to my_orders_path
+    else
+      render :new
+    end
   end
 
   def my
     @orders = policy_scope(Order)
-  #  @order = Order.where(user: current_user)
-  #  authorize @order
   end
 
   private
