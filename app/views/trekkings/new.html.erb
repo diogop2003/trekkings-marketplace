@@ -1,45 +1,10 @@
-
-<form id="form-produto">
-  <div class="form-row p-3">
-        <div class="form-group col-md-12">
-            <label><p>Foto do produto</p></label><br>
-            <input id="fotoProduto" type="file" accept="image/*" capture>
-        </div>
-    </div>
-    <div class="form-row p-3">
-        <div class="form-group col-md-12">
-            <label for="cadastroProduto"><p>Nome do produto</p></label>
-            <input type="text" class="form-control" id="nomeProduto">
-        </div>
-    </div>
-    <div class="form-row p-3">
-        <div class="form-group col-md-12">
-            <label for="cadastroProduto"><p>Category</p></label>
-            <select type="text" class="form-control" id="category">
-                <option value=:id><p>shoes</p></option>
-                <option value=:id selected><p>accessories</p></option>
-                <option value=:id><p>clothes</p></option>
-                <option value=:id><p>backpacks</p></option>
-            </select>
-        </div>
-    </div>
-    <div class="form-row p-3">
-        <div class=" form-group col-md-6">
-            <label><p>Valor de venda</p></label>
-            <input type="number" class="form-control" id="valorVenda" placeholder="R$">
-        </div>
-    </div>
-
-    </div>
-    <div class="form-row p-3">
-        <div class="form-group col-md-12">
-            <label><p>Descrição</p></label><br>
-            <textarea id="descricaoProduto" class="form-control"></textarea>
-        </div>
-    </div>
-    <div class="form-row p-3">
-        <div class="form-group col-md-12 " id="button-create-form">
-            <%= link_to "create", root_path, class: 'btn btn-outline-success' %>
-        </div>
-    </div>
-</form>
+<div class="container mt-5">
+<%= simple_form_for @trekking do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file, direct_upload: true %>
+  <%= f.button :submit %>
+<% end %>
+</div>

@@ -8,4 +8,8 @@ class TrekkingPolicy < ApplicationPolicy
   def new?
     return true
   end
+
+  def create?
+    true
+  end
 end

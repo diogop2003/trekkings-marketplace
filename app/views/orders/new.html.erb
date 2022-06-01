@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 10rem;">
 
-  <div class="card mb-3 mt-5" style="max-width: 900px;">
-    <img src=<%= @trekking.url_image %> class="img-fluid rounded-start">
+  <div class="card mb-3" style="max-width: 900px;">
+  <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
@@ -11,9 +11,8 @@
       <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
     </div>
   </div>
-    <%= simple_form_for [@trekking, @order] do |f| %>
+  <%= simple_form_for [@trekking, @order] do |f| %>
     <%= f.input :address %>
     <%= f.button :submit %>
   <% end %>
-  
 </div>
