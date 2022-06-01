@@ -1,13 +1,16 @@
 <div class="container">
+
   <div class="card mb-3" style="max-width: 900px;">
     <img src=<%= @trekking.url_image %> class="img-fluid rounded-start">
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
         <p>Short description here!</p>
+
       </div>
       <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
     </div>
+
   </div>
   <%= simple_form_for [@trekking, @order] do |f| %>
     <%= f.input :address %>

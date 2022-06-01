@@ -22,6 +22,6 @@ class TrekkingsController < ApplicationController
   private
 
   def trekking_params
-    params.require(:trekking).permit(:name, :price, :category)
+    params.require(:trekking).permit(:name, :price, :category, :url_image)
   end
 end

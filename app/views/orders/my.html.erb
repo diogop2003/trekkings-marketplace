@@ -1,9 +1,15 @@
 <h2>Your Orders:</h2>
 
-<ul>
+<div class="container_card">
   <% @orders.each do |order| %>
-    <li><%= order.user.name %>
-    <%= order.trekking.name %>
-    <%= order.address %></li>
-  <% end %>
-</ul>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <ul class="card_orders">
+          <li><%= order.user.name %>
+          <%= order.trekking.name %>
+          <%= order.address %></li>
+      </ul>
+  </div>
+</div>
+<% end %>
