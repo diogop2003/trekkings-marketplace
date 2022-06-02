@@ -1,8 +1,9 @@
-<div class="container-new-order" style="margin-top: 10rem;">
 
+<div class="container-new-order">
 
+<<<<<<< HEAD
   <div class="card-new mb-3" style="max-width: 900px;">
-    <%# <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>"> %>
+     <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>"> 
 
       <div class="card-trip-infos">
         <div>
@@ -12,8 +13,21 @@
         <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
       </div>
     </div>
+  </div>
+<div>
+  <div class="payment">
     <%= simple_form_for [@trekking, @order] do |f| %>
-      <%= f.input :address %>
-      <%= f.button :submit %>
+    <div class="row w-100">
+      <div class="col-6"><%= f.input :name %></div>
+      <div class="col-6"><%= f.input :address %></div>
+      <div class="col-6"><%= f.input :number %></div>
+      <div class="col-6"><%= f.input :complement %></div>
+      <div class="col-6"><%= f.input :cpf %></div>
+      <div class="col-6"><%= f.input :cardnumber %></div>
+      <div class="col-6"><%= f.input :code %></div>
+      <div class="col-6"><%= f.input :validates %></div>
+      <%= f.button :submit, class: "btn btn-success" %>
+    </div>
     <% end %>
   </div>
+</div>

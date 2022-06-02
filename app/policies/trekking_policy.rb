@@ -6,10 +6,26 @@ class TrekkingPolicy < ApplicationPolicy
   end
 
   def new?
-    return true
+    true
   end
 
   def create?
+    true
+  end
+
+  def destroy?
+    record.user == user
+  end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def show?
     true
   end
 end

@@ -4,15 +4,22 @@
 </div>
 <%# <div class="container_card mx-5 my-5"> %>
   <% @trekkings.each do |trekking| %>
-  <div class="card-product m-5">
-    <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>">
+  <div class="card-product m-5 p-3">
+    <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key, width: 120, height: 120, crop: :thumb, gravity: :center) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>">
     <div class="card-product-infos">
       <ul class="card_orders">
         <li style="list-style: none;"><%= trekking.user.name %></li>
+        <li style="list-style: none;"><%= trekking.name %></li>
         <li style="list-style: none;"><%= trekking.category %></li>
         <li style="list-style: none;"><%= trekking.description %></li>
         <li style="list-style: none;"><%= trekking.price %></li>
       </ul>
+      <% if policy(trekking).edit? %>
+        <%= link_to "Edit", edit_trekking_path(trekking), class: 'btn btn-outline-success' %>
+      <% end %>
+      <% if policy(trekking).destroy? %>
+        <%= link_to "Delete", trekking_path(trekking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-success' %>
+      <% end %>
     </div>
   </div>
 <% end %>

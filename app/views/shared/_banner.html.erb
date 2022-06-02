@@ -1,13 +1,15 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
   <div class="container">
-    <h1>Trekking Products</h1>
+    <h1>Trekking Products</h1><br>
     <%= form_tag root_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a product"
       %>
-      <%= submit_tag "Search", class: "btn btn-success" %>
+      <div class="justify-content-center d-flex mt-3">
+        <%= submit_tag "Search", class: "btn btn-success" %>
+      </div>
     <% end %>
   </div>
 </div>
