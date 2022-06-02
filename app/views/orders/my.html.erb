@@ -5,7 +5,9 @@
 <div class="container_card mx-5 my-5">
   <% @orders.each do |order| %>
   <div class="card-product">
+
     <img src=<%= order.trekking.photo.attached? ? cl_image_path(order.trekking.photo.key) : "app/assets/images/no_photo.jpg" %>/>
+
     <div class="card-product-infos">
       <ul class="card_orders">
           <li><%= order.user.name %>
