@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 2022_06_01_173420) do
     t.bigint "trekking_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "number"
+    t.text "complement"
+    t.string "name"
+    t.string "cpf"
+    t.string "cardnumber"
+    t.integer "code"
+    t.string "validates"
     t.index ["trekking_id"], name: "index_orders_on_trekking_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -60,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_173420) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "url_image"
+    t.string "photo"
     t.string "description"
     t.index ["user_id"], name: "index_trekkings_on_user_id"
   end

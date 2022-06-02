@@ -3,17 +3,18 @@
   background-color: rgb(221, 221, 221);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
-
-  width: 16rem;
 }
 
 
 .container-new-order{
-display: flex;
-justify-content: space-evenly;
-padding: 20px;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ width: 900px;
+ margin: 150px auto ;
 }
 
 .card-trip-infos h2{
 text-align: left;
+font-size: 38px;
 }
