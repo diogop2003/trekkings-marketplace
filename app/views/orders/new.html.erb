@@ -1,7 +1,7 @@
-<div class="container" style="margin-top: 10rem;">
+<div class="container-new-order" style="margin-top: 10rem;">
 
-  <div class="card mb-3" style="max-width: 900px;">
-  <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
+  <div class="card-new mb-3" style="max-width: 900px;">
+  <div class="trekking-card-img" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
