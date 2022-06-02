@@ -18,7 +18,7 @@ class TrekkingsController < ApplicationController
     @trekking.user = current_user
     authorize @trekking
     if @trekking.save
-      redirect_to root_path, notice: "trakking was created"
+      redirect_to root_path, notice: "Your product was created!"
     else
       render :new
     end
@@ -28,7 +28,7 @@ class TrekkingsController < ApplicationController
     @trekking = Trekking.find(params[:id])
     authorize @trekking
     @trekking.destroy
-    redirect_to trekkings_path, alert: ""
+    redirect_to trekkings_path, alert: "Your product has been deleted"
   end
 
   def edit
@@ -40,7 +40,7 @@ class TrekkingsController < ApplicationController
     @trekking = Trekking.find(params[:id])
     authorize @trekking
     if @trekking.update(trekking_params)
-      redirect_to trekkings_path, notice: "trakking was updated"
+      redirect_to trekkings_path, notice: "Your product was updated!"
     else
       render :edit
     end
