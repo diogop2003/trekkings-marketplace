@@ -1,18 +1,19 @@
 <div class="container-new-order" style="margin-top: 10rem;">
 
-  <div class="card-new mb-3" style="max-width: 900px;">
-  <div class="trekking-card-img" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @trekking.name %></h2>
-        <p>Short description here!</p>
 
+  <div class="card-new mb-3" style="max-width: 900px;">
+    <div class="trekking-card-img" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
+
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= @trekking.name %></h2>
+          <p>><%= @trekking.description %></p>
+        </div>
+        <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
       </div>
-      <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
     </div>
+    <%= simple_form_for [@trekking, @order] do |f| %>
+      <%= f.input :address %>
+      <%= f.button :submit %>
+    <% end %>
   </div>
-  <%= simple_form_for [@trekking, @order] do |f| %>
-    <%= f.input :address %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
