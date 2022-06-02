@@ -9,10 +9,17 @@
     <div class="card-product-infos">
       <ul class="card_orders">
         <li style="list-style: none;"><%= trekking.user.name %></li>
+        <li style="list-style: none;"><%= trekking.name %></li>
         <li style="list-style: none;"><%= trekking.category %></li>
         <li style="list-style: none;"><%= trekking.description %></li>
         <li style="list-style: none;"><%= trekking.price %></li>
       </ul>
+      <% if policy(trekking).edit? %>
+        <%= link_to "Edit", edit_trekking_path(trekking), class: 'btn btn-outline-success' %>
+      <% end %>
+      <% if policy(trekking).destroy? %>
+        <%= link_to "Delete", trekking_path(trekking), method: :delete, class: 'btn btn-outline-success' %>
+      <% end %>
     </div>
   </div>
 <% end %>
