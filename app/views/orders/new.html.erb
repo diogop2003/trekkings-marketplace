@@ -2,8 +2,7 @@
 <div class="container-new-order">
 
   <div class="card-trip">
-  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU'>
-    <%# <%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : image_url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU') %> %>
+  <img src="<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>">
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
@@ -28,4 +27,3 @@
     <% end %>
   </div>
 </div>
-
