@@ -1,11 +1,10 @@
 class TrekkingsController < ApplicationController
   def index
     @trekkings = policy_scope(Trekking)
+    @trekkings = @trekkings.includes(:order).where(order: {id: nil})
 
     if params[:query].present?
-      @trekkings = Trekking.search_by_name_and_category(params[:query])
-    else
-      @trekkings = Trekking.all
+      @trekkings = @trekkings.search_by_name_and_category(params[:query])
     end
   end
 
@@ -23,6 +22,15 @@ class TrekkingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   private

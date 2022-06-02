@@ -1,5 +1,6 @@
 class Trekking < ApplicationRecord
   belongs_to :user
+  has_one :order
   has_one_attached :photo
   validates :name, :price, :description, :category, :photo, presence: true
   validates :category, inclusion: { in: %w[items shoes backpack clothes]}
