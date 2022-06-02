@@ -1,11 +1,10 @@
 class TrekkingsController < ApplicationController
   def index
-    @trekkings = policy_scope(Trekking)
+    @trekkings = policy_scope(Trekking).where(user: current_user)
+    @trekkings = @trekkings.includes(:order).where(order: {id: nil})
 
     if params[:query].present?
-      @trekkings = Trekking.search_by_name_and_category(params[:query])
-    else
-      @trekkings = Trekking.all
+      @trekkings = @trekkings.search_by_name_and_category(params[:query])
     end
   end
 
@@ -22,6 +21,28 @@ class TrekkingsController < ApplicationController
       redirect_to root_path, notice: "trakking was created"
     else
       render :new
+    end
+  end
+
+  def destroy
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+    @trekking.destroy
+    redirect_to trekkings_path, alert: ""
+  end
+
+  def edit
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+  end
+
+  def update
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+    if @trekking.update(trekking_params)
+      redirect_to trekkings_path, notice: "trakking was updated"
+    else
+      render :edit
     end
   end
 
