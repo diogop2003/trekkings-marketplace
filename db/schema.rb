@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_173420) do
     t.text "complement"
     t.string "name"
     t.string "cpf"
-    t.text "cardnumber"
+    t.string "cardnumber"
     t.integer "code"
     t.string "validates"
     t.index ["trekking_id"], name: "index_orders_on_trekking_id"
