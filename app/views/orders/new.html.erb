@@ -1,16 +1,12 @@
 
 <div class="container-new-order">
 
-<<<<<<< HEAD
-  <div class="card-new mb-3" style="max-width: 900px;">
-     <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>"> 
-
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= @trekking.name %></h2>
-          <p>><%= @trekking.description %></p>
-        </div>
-        <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
+  <div class="card-trip">
+  <img src="<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>">
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @trekking.name %></h2>
+        <p>><%= @trekking.description %></p>
       </div>
     </div>
   </div>
