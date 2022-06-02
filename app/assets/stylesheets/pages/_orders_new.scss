@@ -1,19 +1,25 @@
-#produto{
-  border: 0;
+.trekking-card-img{
+  height: 230px;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+
 }
 
-#card_product{
-  background-color: #fff;
+
+.container-new-order{
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ width: 900px;
+ margin: 150px auto ;
 }
 
-#form-product{
-  align-content: center;
-  background-color: #fff;
-  width: 800px;
-  height: 600px;
-  margin: 80px 0px auto;
-  padding: 50px;
-  border-radius: 50px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+.card-trip-infos h2{
+text-align: left;
+font-size: 38px;
 }
 
+.payment{
+
+}

@@ -1,7 +1,8 @@
-<div class="container" style="margin-top: 10rem;">
+<div class="container-new-order">
 
-  <div class="card mb-3" style="max-width: 900px;">
-  <div class="trekking-card-image" style="background-image: url(<%= cl_image_path(@trekking.photo.key) %>)"></div>
+  <div class="card-trip">
+  <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU'>
+    <%# <%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : image_url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU') %> %>
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
@@ -10,15 +11,20 @@
       <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
     </div>
   </div>
-  <%= simple_form_for [@trekking, @order] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :number %>
-    <%= f.input :complement %>
-    <%= f.input :cpf %>
-    <%= f.input :cardnumber %>
-    <%= f.input :code %>
-    <%= f.input :validates %>
-    <%= f.button :submit %>
-  <% end %>
+<div>
+  <div class="payment">
+    <%= simple_form_for [@trekking, @order] do |f| %>
+    <div class="row w-100">
+      <div class="col-6"><%= f.input :name %></div>
+      <div class="col-6"><%= f.input :address %></div>
+      <div class="col-6"><%= f.input :number %></div>
+      <div class="col-6"><%= f.input :complement %></div>
+      <div class="col-6"><%= f.input :cpf %></div>
+      <div class="col-6"><%= f.input :cardnumber %></div>
+      <div class="col-6"><%= f.input :code %></div>
+      <div class="col-6"><%= f.input :validates %></div>
+      <%= f.button :submit, class: "btn btn-success" %>
+    </div>
+    <% end %>
+  </div>
 </div>
