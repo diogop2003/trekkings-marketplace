@@ -1,6 +1,8 @@
-<div style="margin-top: 10rem;">
+<div class="banner_signup" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1496996317594-95a0cf707af5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+
+<div class="signup">
   <h2>Sign up</h2>
-</div>
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -31,4 +33,6 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
+  </div>
+  </div>
   </div>
