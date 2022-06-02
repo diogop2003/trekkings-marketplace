@@ -35,6 +35,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'
+gem 'pg_search', '~> 2.3.0'
 
 group :development, :test do
   gem 'pry-byebug'

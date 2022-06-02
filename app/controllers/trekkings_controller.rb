@@ -1,7 +1,12 @@
 class TrekkingsController < ApplicationController
   def index
-    @trekkings = Trekking.all
-    authorize @trekkings
+    @trekkings = policy_scope(Trekking)
+
+    if params[:query].present?
+      @trekkings = Trekking.search_by_name_and_category(params[:query])
+    else
+      @trekkings = Trekking.all
+    end
   end
 
   def new

@@ -1,12 +1,11 @@
 <div class="container" style="margin-top: 10rem;">
 
   <div class="card mb-3" style="max-width: 900px;">
-  <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "app/assets/images/no_photo.jpg" %>)"></div>
+  <div class="trekking-card-image" style="background-image: url(<%= cl_image_path(@trekking.photo.key) %>)"></div>
     <div class="card-trip-infos">
       <div>
         <h2><%= @trekking.name %></h2>
-        <p>Short description here!</p>
-
+        <p>><%= @trekking.description %></p>
       </div>
       <h3 class="card-trip-pricing">R$<%= @trekking.price %></h3>
     </div>
