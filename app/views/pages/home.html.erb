@@ -1,15 +1,16 @@
 <%= render 'shared/banner' %>
 
-
-<% @trekkings.each do |t| %>
-  <div class="d-inline-flex justify-content-around">
-    <div class="card">
-      <div class="trekking-card-image" style="background-image: url(<%= t.photo.attached? ? cl_image_path(t.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
-      <div class="card-body">
-        <h5 class="card-title"><%= t.name %></h5>
-        <p class="card-text">R$<%= t.price %></p>
-        <%= link_to "Show me more", new_trekking_order_path(t.id), class: 'btn btn-outline-success' %>
+<div class="row">
+  <% @trekkings.each do |t| %>
+    <div class="col-3 mb-5">
+      <div class="card">
+        <div class="trekking-card-image" style="background-image: url(<%= t.photo.attached? ? cl_image_path(t.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= t.name %></h5>
+          <p class="card-text">R$<%= t.price %></p>
+          <%= link_to "Show me more", new_trekking_order_path(t.id), class: 'btn btn-outline-success' %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
