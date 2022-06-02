@@ -1,8 +1,8 @@
 <%= render 'shared/banner' %>
 
-<div class="container">
+<div class="row">
   <% @trekkings.each do |t| %>
-    <div class="d-inline-flex justify-content-around">
+    <div class="col-3 mb-5">
       <div class="card">
         <div class="trekking-card-image" style="background-image: url(<%= t.photo.attached? ? cl_image_path(t.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
         <div class="card-body">
