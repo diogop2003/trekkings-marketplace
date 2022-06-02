@@ -1,6 +1,6 @@
 class TrekkingsController < ApplicationController
   def index
-    @trekkings = policy_scope(Trekking)
+    @trekkings = policy_scope(Trekking).where(user: current_user)
     @trekkings = @trekkings.includes(:order).where(order: {id: nil})
 
     if params[:query].present?
@@ -25,12 +25,25 @@ class TrekkingsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def show
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+    @trekking.destroy
+    redirect_to trekkings_path, alert: ""
   end
 
   def edit
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+  end
+
+  def update
+    @trekking = Trekking.find(params[:id])
+    authorize @trekking
+    if @trekking.update(trekking_params)
+      redirect_to trekkings_path, notice: "trakking was updated"
+    else
+      render :edit
+    end
   end
 
   private
