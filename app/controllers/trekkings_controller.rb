@@ -1,7 +1,7 @@
 class TrekkingsController < ApplicationController
   def index
     @trekkings = Trekking.all
-    authorize @trekkings
+    @trekkings = policy_scope(Trekking)
   end
 
   def new
