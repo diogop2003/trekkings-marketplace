@@ -1,13 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1520443127926-0dc5e799b5d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
-  <div class="container" style="margin-top: 5rem;">
+<div class="min-vh-100 vw-100" style="background-image: url('https://fitpeople.com/pt/wp-content/uploads/2020/01/homens-fazendo-trekking.jpg'); background-size: cover; background-position: center;">
+<div class="container" style="margin-top: 4rem;">
     <h2>Your Orders:</h2>
-
-
     <% @orders.each do |order| %>
     <div class="card-product mt-5" style="width: 400px;">
-
-      <img src="<%= order.trekking.photo.attached? ? cl_image_path(order.trekking.photo.key) : 'app/assets/images/no_photo.jpg' %>">
-
+      <% if order.trekking.photo.attached? %>
+        <%= cl_image_tag(order.trekking.photo.key, width: 120, height: 120, crop: :thumb, gravity: :center) %>
+      <% else %>
+        <%= image_tag("no_photo.jpg") %>
+      <% end %>
       <div class="card-product-infos">
         <ul class="card_orders">
           <li style="list-style: none;"><%= order.user.name %></li>
@@ -16,7 +16,6 @@
         </ul>
       </div>
     </div>
-
     <% end %>
   </div>
 </div>
