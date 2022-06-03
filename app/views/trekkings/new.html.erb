@@ -1,12 +1,15 @@
-
-<div class="container" style="margin-top: 6rem;">
-  <h2>Add a product:</h2>
-  <%= simple_form_for @trekking do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :category, :collection => %w[items shoes backpack clothes]%>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file, direct_upload: true %>
-    <%= f.button :submit, class: "btn btn-success" %>
-  <% end %>
+<div class="banner_add" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1510820534885-68189a100ce7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="add">
+    <div class="container">
+      <h2>Add a product:</h2>
+      <%= simple_form_for @trekking do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :category, :collection => %w[items shoes backpack clothes]%>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file, direct_upload: true %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
 </div>
