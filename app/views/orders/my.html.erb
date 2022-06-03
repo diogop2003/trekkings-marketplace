@@ -1,17 +1,22 @@
-<div class="container" style="margin-top: 5rem; margin-bottom: 5rem;">
-  <h2><strong>Your Orders:</strong></h2>
-  <% @orders.each do |order| %>
-  <div class="card-product mt-5" style="width: 400px;">
-
-    <img src="<%= order.trekking.photo.attached? ? cl_image_path(order.trekking.photo.key) : 'app/assets/images/no_photo.jpg' %>">
-
-    <div class="card-product-infos">
-      <ul class="card_orders">
-        <li style="list-style: none;"><%= order.user.name %></li>
-        <li style="list-style: none;"><%= order.trekking.name %></li>
-        <li style="list-style: none;"><%= order.address %></li>
-      </ul>
+<div class="min-vh-100 vw-100" style="background-image: url('https://fitpeople.com/pt/wp-content/uploads/2020/01/homens-fazendo-trekking.jpg'); background-size: cover; background-position: center;">
+<div class="container" style="margin-top: 4rem;">
+    <h2>Your Orders:</h2>
+    <% @orders.each do |order| %>
+    <div class="card-product mt-5" style="width: 400px;">
+      <% if order.trekking.photo.attached? %>
+        <%= cl_image_tag(order.trekking.photo.key, width: 120, height: 120, crop: :thumb, gravity: :center) %>
+      <% else %>
+        <%= image_tag("no_photo.jpg") %>
+      <% end %>
+      <div class="card-product-infos">
+        <ul class="card_orders">
+          <li style="list-style: none;"><%= order.user.name %></li>
+          <li style="list-style: none;"><%= order.trekking.name %></li>
+          <li style="list-style: none;"><%= order.address %></li>
+        </ul>
+      </div>
     </div>
+    <% end %>
   </div>
 
   <% end %>
