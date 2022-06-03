@@ -9,7 +9,6 @@
       <img src="<%= trekking.photo.attached? ? cl_image_path(trekking.photo.key, width: 120, height: 120, crop: :thumb, gravity: :center) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU' %>">
       <div class="card-product-infos">
         <ul class="card_orders">
-          <li style="list-style: none;"><%= trekking.user.name %></li>
           <li style="list-style: none;"><%= trekking.name %></li>
           <li style="list-style: none;"><%= trekking.category %></li>
           <li style="list-style: none;"><%= trekking.description %></li>
