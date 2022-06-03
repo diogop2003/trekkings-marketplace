@@ -4,11 +4,9 @@
   <div class="card-trip">
     <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
     <div class="card-trip-infos">
-      <div>
         <h2><%= @trekking.name %></h2>
         <p><%= @trekking.description %></p>
-        <h3>R$<%= @trekking.price %></h3>
-      </div>
+        <h3><strong>R$<%= @trekking.price %></strong></h3>
     </div>
   </div>
 <div>
