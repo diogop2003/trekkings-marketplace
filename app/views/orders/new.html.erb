@@ -10,6 +10,9 @@
     </div>
   </div>
 <div>
+<% if @trekking.user == current_user %>
+  <h3>This Product is yours.</h3>
+<% else %>
   <div class="payment">
     <%= simple_form_for [@trekking, @order] do |f| %>
     <div class="row w-100">
@@ -26,3 +29,4 @@
     <% end %>
   </div>
 </div>
+<% end %>
