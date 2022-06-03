@@ -8,7 +8,11 @@
         <div class="card-body">
           <h5 class="card-title"><%= t.name %></h5>
           <p class="card-text">R$<%= t.price %></p>
+          <% if t.user == current_user %>
+          <%= link_to "Show me more", trekkings_path, class: 'btn btn-outline-success' %>
+          <% else %>
           <%= link_to "Show me more", new_trekking_order_path(t.id), class: 'btn btn-outline-success' %>
+          <% end %>
         </div>
       </div>
     </div>
