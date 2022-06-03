@@ -1,32 +1,32 @@
 
 <div class="container-new-order">
 
-  <div class="card-trip">
-    <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
-    <div class="card-trip-infos">
-        <h2><%= @trekking.name %></h2>
-        <p><%= @trekking.description %></p>
-        <h3><strong>R$<%= @trekking.price %></strong></h3>
+    <div class="card-trip">
+      <div class="trekking-card-image" style="background-image: url(<%= @trekking.photo.attached? ? cl_image_path(@trekking.photo.key) : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsNGGjrfSqqv8UjL18xS4YypbK-q7po_8oVQ&usqp=CAU" %>)"></div>
+      <div class="card-trip-infos">
+          <h2><%= @trekking.name %></h2>
+          <p><%= @trekking.description %></p>
+          <h3><strong>R$<%= @trekking.price %></strong></h3>
+      </div>
     </div>
-  </div>
-<div>
+  <div>
 <% if @trekking.user == current_user %>
   <h3>This Product is yours.</h3>
 <% else %>
   <div class="payment">
     <%= simple_form_for [@trekking, @order] do |f| %>
-    <div class="row w-100">
-      <div class="col-6"><%= f.input :name %></div>
-      <div class="col-6"><%= f.input :address %></div>
-      <div class="col-6"><%= f.input :number %></div>
-      <div class="col-6"><%= f.input :complement %></div>
-      <div class="col-6"><%= f.input :cpf %></div>
-      <div class="col-6"><%= f.input :cardnumber %></div>
-      <div class="col-6"><%= f.input :code %></div>
-      <div class="col-6"><%= f.input :validates %></div>
-      <%= f.button :submit, class: "btn btn-success" %>
-    </div>
+      <div class="row w-100">
+        <div class="col-6"><%= f.input :name %></div>
+        <div class="col-6"><%= f.input :address %></div>
+        <div class="col-6"><%= f.input :number %></div>
+        <div class="col-6"><%= f.input :complement %></div>
+        <div class="col-6"><%= f.input :cpf %></div>
+        <div class="col-6"><%= f.input :cardnumber %></div>
+        <div class="col-6"><%= f.input :code %></div>
+        <div class="col-6"><%= f.input :validates %></div>
+        <%= f.button :submit, class: "btn btn-success" %>
+      </div>
     <% end %>
+    </div>
   </div>
-</div>
 <% end %>
